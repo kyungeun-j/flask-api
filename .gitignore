@@ -1,4 +1,3 @@
 # Virtualenv
-bin/
-lib/
-pyvenv.cfg
+venv
+__pycache__

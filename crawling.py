@@ -28,7 +28,7 @@ for i, t in zip(selector, title):
         if j.select_one('.txt_ntc') != None:
             mainObj['diff_yesterday'] = j.select_one('.txt_ntc').string
     TodayCount[t] = mainObj
-print('TodayCount', json.dumps(TodayCount, ensure_ascii=False, indent="\t") )
+# print('TodayCount', json.dumps(TodayCount, ensure_ascii=False, indent="\t") )
 
 # DailyCount JSON
 selector2 = soup.select('#content > div > div:nth-child(17) > table > tbody > tr')
@@ -38,7 +38,7 @@ for i,j in enumerate(selector2):
     dayObj['date'] = j.select_one('td:nth-child(1)').string
     dayObj['total'] = j.select_one('td:nth-child(3)').string
     DailyCount[i] = dayObj
-print('DailyCount', json.dumps(DailyCount, ensure_ascii=False, indent="\t") )
+# print('DailyCount', json.dumps(DailyCount, ensure_ascii=False, indent="\t") )
 
 # GenderCount JSON
 selector3 = soup.select('#content > div > div:nth-child(22) > table > tbody > tr')
@@ -67,4 +67,4 @@ for i, g in zip(selector3, gender):
             genderObj[j] = typeObj
     GenderCount[g] = genderObj
 
-print('GenderCount', json.dumps(GenderCount, ensure_ascii=False, indent="\t") )
+# print('GenderCount', json.dumps(GenderCount, ensure_ascii=False, indent="\t") )
